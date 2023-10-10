@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block description %}{{product.description}}{% endblock %}
+{% block robots %}index, follow{% endblock %}
+{% block keywords %}signup, myshop{% endblock %}
+{% block css %}{% static "products/product.css" %}{% endblock %}
+{% block title %}{{product.title}}{% endblock %}
+
+{% block body %}
+    
+    {% include "includes/nav.html" %}
+    <div id="product-main-con">
+        <main>
+            <img src="{{product.image.url}}">
+            <div>
+                <h1>{{product.title}}</h1>
+                <p>{{product.brand.title}}</p>
+                <p>{{product.description}}</p>
+                <button>Add to card</button>
+            </div>
+        </main>
+        <section id="feedback">
+            <h3>Customer's feedbacks:</h3>
+        </section>
+    </div>
+    
+{% endblock %}
